@@ -47,6 +47,7 @@ material = SubResource("StandardMaterial3D_fohht")
 
 [node name="Player" parent="Launch" instance=ExtResource("1_w4myg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55907, 0)
+mass = 1.0
 linear_damp = 1.0
 angular_damp = 3.0
 
