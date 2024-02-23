@@ -45,6 +45,9 @@ use_collision = true
 size = Vector3(3, 1, 3)
 material = SubResource("StandardMaterial3D_fohht")
 
+[node name="Player" parent="Launch" instance=ExtResource("1_w4myg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55907, 0)
+
 [node name="Landing" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0439, 0.513594, 0.0137308)
 use_collision = true
@@ -54,6 +57,3 @@ material = SubResource("StandardMaterial3D_ub5cw")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998279, 0.0227137, 0.0540677, 0.0354925, 0.967933, 0.24869, -0.0466852, 0.250181, -0.967073, 1.063, 10, -10)
 fov = 78.2633
-
-[node name="Player" parent="." instance=ExtResource("1_w4myg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02392, 0)
