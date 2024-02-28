@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfxc5nwgyoiqd"]
+[gd_scene load_steps=9 format=3 uid="uid://cfxc5nwgyoiqd"]
 
 [ext_resource type="PackedScene" uid="uid://bkwkl4n2s3fd7" path="res://player.tscn" id="1_w4myg"]
 [ext_resource type="Script" path="res://LandingPad.gd" id="2_qkqbt"]
@@ -18,9 +18,6 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydb8d"]
 albedo_color = Color(0.368627, 0.207843, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6mri"]
-albedo_color = Color(0, 0.690196, 0.117647, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fohht"]
 albedo_color = Color(0.815686, 0.113725, 0.145098, 1)
@@ -42,12 +39,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -4, 2.08165e-12)
 use_collision = true
 size = Vector3(30, 8, 5)
 material = SubResource("StandardMaterial3D_ydb8d")
-
-[node name="Obstacle" type="CSGBox3D" parent="." groups=["Failed"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0793047, 3.90194, 0.0603676)
-use_collision = true
-size = Vector3(3, 2, 3)
-material = SubResource("StandardMaterial3D_l6mri")
 
 [node name="LaunchPad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9534, 0.477507, -0.00875114)
