@@ -29,7 +29,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node)-> void:
 	if "Goal" in body.get_groups():
-		landed_sequence(body.scene_file_path)
+		print(body)
+		landed_sequence(body.file_path)
 		
 	if "Failed" in body.get_groups():
 		crash_sequence()
@@ -45,6 +46,10 @@ func crash_sequence() -> void:
 func landed_sequence(next_level_file: String) -> void:
 	print("Landed")
 	# get_tree().quit()
+	print("next_level_file")
+
+	print(next_level_file)
+
 	get_tree().change_scene_to_file(next_level_file)
 	
 		
