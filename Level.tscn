@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfxc5nwgyoiqd"]
+[gd_scene load_steps=9 format=3 uid="uid://cfxc5nwgyoiqd"]
 
 [ext_resource type="PackedScene" uid="uid://bkwkl4n2s3fd7" path="res://player.tscn" id="1_w4myg"]
+[ext_resource type="Script" path="res://LandingPad.gd" id="2_qkqbt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_btymt"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,23 +40,24 @@ use_collision = true
 size = Vector3(30, 8, 5)
 material = SubResource("StandardMaterial3D_ydb8d")
 
-[node name="Launch" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9534, 0.519974, 0.0121019)
+[node name="LaunchPad" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9534, 0.477507, -0.00875114)
 use_collision = true
 size = Vector3(3, 1, 3)
 material = SubResource("StandardMaterial3D_fohht")
 
-[node name="Player" parent="Launch" instance=ExtResource("1_w4myg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55907, 0)
+[node name="Player" parent="LaunchPad" instance=ExtResource("1_w4myg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0159311, 1.51623, -0.0210171)
 mass = 1.0
 linear_damp = 1.0
 angular_damp = 3.0
 
-[node name="Landing" type="CSGBox3D" parent="." groups=["Goal"]]
+[node name="LandingPad" type="CSGBox3D" parent="." groups=["Goal"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0439, 0.513594, 0.0137308)
 use_collision = true
 size = Vector3(3, 1, 3)
 material = SubResource("StandardMaterial3D_ub5cw")
+script = ExtResource("2_qkqbt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998279, 0.0227137, 0.0540677, 0.0354925, 0.967933, 0.24869, -0.0466852, 0.250181, -0.967073, 1.063, 10, -10)
