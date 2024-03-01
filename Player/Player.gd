@@ -8,7 +8,8 @@ extends RigidBody3D
 @onready var left_booster_particles: GPUParticles3D = $leftBoosterParticles
 @onready var explosion_particles: GPUParticles3D = $ExplosionParticles
 @onready var success_particles: GPUParticles3D = $SuccessParticles
-@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var rocket: MeshInstance3D = $Rocket
+
 
 
 
@@ -76,7 +77,7 @@ func crash_sequence() -> void:
 	explosion_audio.play(2.5)
 	explosion_particles.emitting = true
 	
-	mesh_instance_3d.hide()
+	rocket.hide()
 	
 	# Disable further processing to stop the character's movement.
 	set_process(false)
