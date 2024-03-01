@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkwkl4n2s3fd7"]
+[gd_scene load_steps=10 format=3 uid="uid://bkwkl4n2s3fd7"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_4hp3x"]
 [ext_resource type="AudioStream" uid="uid://dkxjdw30lp2q0" path="res://Audio/SFX - Death Explosion.ogg" id="2_mhlnf"]
 [ext_resource type="AudioStream" uid="uid://bbwy0nmuyhmb0" path="res://Audio/SFX - Success.ogg" id="3_drr1x"]
 [ext_resource type="AudioStream" uid="uid://bcqsftrdxruvl" path="res://Audio/SFX - Main engine thrust.ogg" id="4_nqu4d"]
-[ext_resource type="PackedScene" uid="uid://cpdgh027k71if" path="res://booster_particles.tscn" id="5_oq5m4"]
+[ext_resource type="PackedScene" uid="uid://cpdgh027k71if" path="res://Particles/booster_particles.tscn" id="5_0cy8c"]
+[ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://Particles/explosion_particles.tscn" id="6_1vlc7"]
+[ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://Particles/success_particles.tscn" id="7_qnuc6"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lc7ax"]
 
@@ -37,13 +39,17 @@ stream = ExtResource("3_drr1x")
 [node name="RocketAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_nqu4d")
 
-[node name="BoosterParticles" parent="." instance=ExtResource("5_oq5m4")]
+[node name="BoosterParticles" parent="." instance=ExtResource("5_0cy8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.956963, 0)
 
-[node name="RightBoosterParticles" parent="." instance=ExtResource("5_oq5m4")]
+[node name="RightBoosterParticles" parent="." instance=ExtResource("5_0cy8c")]
 transform = Transform3D(0.924006, -0.382377, 0, 0.382377, 0.924006, 0, 0, 0, 1, 0.415283, -0.956963, 0)
 
-[node name="leftBoosterParticles" parent="." instance=ExtResource("5_oq5m4")]
+[node name="leftBoosterParticles" parent="." instance=ExtResource("5_0cy8c")]
 transform = Transform3D(0.921348, 0.388738, 0, -0.388738, 0.921348, 0, 0, 0, 1, -0.449238, -0.956963, 0)
+
+[node name="ExplosionParticles" parent="." instance=ExtResource("6_1vlc7")]
+
+[node name="SuccessParticles" parent="." instance=ExtResource("7_qnuc6")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
