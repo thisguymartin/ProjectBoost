@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl8yw1np1gyu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydb8d"]
+albedo_color = Color(0.368627, 0.207843, 0, 1)
+
+[node name="Floor" type="CSGBox3D" groups=["Failed"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -4, 2.08165e-12)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Wall" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(0.991888, 0.127117, 0, -0.127117, 0.991888, 0, 0, 0, 1, 16.8164, 8.35701, 0)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Wall2" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(0.991602, -0.129325, -0.000159521, 0.129326, 0.991602, -1.03906e-05, 0.000159526, -1.03115e-05, 1, -16.9659, 8.49352, 0)
+size = Vector3(4, 16, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Cealing1" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(0.0863386, -0.996266, 0, 0.996266, 0.0863386, 0, 0, 0, 1, 11.5947, 18.251, 0.344137)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Cealing2" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(-0.321737, -0.917352, -0.234414, 0.941518, -0.336158, 0.0232695, -0.100147, -0.213218, 0.971858, -3.08121, 19.1066, 0.314184)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Cealing3" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(-0.168472, -0.985707, 0, 0.985707, -0.168472, 0, 0, 0, 1, -15.1686, 19.1066, 0.314184)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Background" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(-0.409238, -0.912428, 0, 0.912428, -0.409238, 0, 0, 0, 1, -10.062, 4.70162, 3.36585)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Background2" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(-0.409238, -0.912428, 0, 0.912428, -0.409238, 0, 0, 0, 1, -1.14881, 4.70162, 3.36585)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")
+
+[node name="Background3" type="CSGBox3D" parent="." groups=["Failed"]]
+transform = Transform3D(-0.531753, 0.846899, 0, -0.846899, -0.531753, 0, 0, 0, 1, 12.602, 3.62981, 3.22163)
+size = Vector3(4, 15, 4)
+material = SubResource("StandardMaterial3D_ydb8d")

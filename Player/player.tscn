@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkwkl4n2s3fd7"]
+[gd_scene load_steps=16 format=3 uid="uid://bkwkl4n2s3fd7"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_4hp3x"]
 [ext_resource type="AudioStream" uid="uid://dkxjdw30lp2q0" path="res://Audio/SFX - Death Explosion.ogg" id="2_mhlnf"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cpdgh027k71if" path="res://Particles/booster_particles.tscn" id="5_0cy8c"]
 [ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://Particles/explosion_particles.tscn" id="6_1vlc7"]
 [ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://Particles/success_particles.tscn" id="7_qnuc6"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_lc7ax"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_axhhd"]
 
@@ -53,10 +51,6 @@ max_contacts_reported = 10
 contact_monitor = true
 linear_damp = 3.0
 script = ExtResource("1_4hp3x")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CylinderMesh_lc7ax")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00487375, 0, 0)
