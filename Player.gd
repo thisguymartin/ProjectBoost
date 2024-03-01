@@ -1,5 +1,10 @@
 extends RigidBody3D
 
+@onready var explosion_audio: AudioStreamPlayer3D = $ExplosionAudio
+@onready var success_audio: AudioStreamPlayer3D = $SuccessAudio
+
+
+
 # The amount of vertical force to apply when the player presses the "boost" action.
 @export_range(750, 2000) var Thrust: float = 1000.0
 # The amount of torque to apply when turning.
@@ -41,6 +46,9 @@ func _on_body_entered(body: Node)-> void:
 
 func crash_sequence() -> void:
 	print("Kaboom")
+	
+	explosion_audio.play(2.5)
+	
 	# Disable further processing to stop the character's movement.
 	set_process(false)
 	# Set flag for scene transition.
@@ -54,6 +62,8 @@ func crash_sequence() -> void:
 
 func landed_sequence(next_level_file: String) -> void:
 	print("Landed")
+	
+	success_audio.play()
 
 	# Create a tween to delay the transition to the next level.
 	var tween = create_tween()
@@ -61,3 +71,4 @@ func landed_sequence(next_level_file: String) -> void:
 	# Set the callback to change to the next level scene after the interval.
 	# 'bind' is used to pass 'next_level_file' to 'change_scene_to_file'.
 	tween.tween_callback(get_tree().change_scene_to_file.bind(next_level_file))
+
