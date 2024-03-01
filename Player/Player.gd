@@ -2,6 +2,12 @@ extends RigidBody3D
 
 @onready var explosion_audio: AudioStreamPlayer3D = $ExplosionAudio
 @onready var success_audio: AudioStreamPlayer3D = $SuccessAudio
+@onready var rocket_audio: AudioStreamPlayer3D = $RocketAudio
+@onready var booster_particles: GPUParticles3D = $BoosterParticles
+@onready var right_booster_particles: GPUParticles3D = $RightBoosterParticles
+@onready var left_booster_particles: GPUParticles3D = $leftBoosterParticles
+
+
 
 
 
@@ -19,16 +25,32 @@ func _ready() -> void:
 
 # `_process` function is called every frame, 'delta' is the time elapsed since the previous frame.
 func _process(delta: float) -> void:
-
+		
 	# Apply vertical force if the "boost" action is pressed.
 	if Input.is_action_pressed("boost"):
+		
+		booster_particles.emitting = true
+		
+		if rocket_audio.playing == false : 
+			rocket_audio.play()
+	
 		apply_central_force(basis.y * delta * Thrust)
+	else: 
+		booster_particles.emitting = false
+		rocket_audio.stop()
+	
 	
 	if Input.is_action_pressed("turn_right"):
+		right_booster_particles.emitting = true 
 		apply_torque(Vector3(0,0,Torque * delta))
+	else:
+		right_booster_particles.emitting = false
 	
 	if Input.is_action_pressed("turn_left"):
+		left_booster_particles.emitting = true 
 		apply_torque(Vector3(0,0,-Torque * delta))
+	else: 
+		left_booster_particles.emitting = false
 	
 	if Input.is_action_pressed("ui_down"):
 		apply_central_force(basis.y * delta * -Thrust)
